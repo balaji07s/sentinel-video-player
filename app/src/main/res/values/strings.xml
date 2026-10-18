@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MX Player Ultra</string>
+    <string name="video_folders">Folders</string>
+    <string name="video_library">Videos</string>
+    <string name="recents">Recent Plays</string>
+    <string name="equalizer_title">Audio Enhancer</string>
+    <string name="subtitle_settings">Subtitles</string>
+    <string name="player_settings">Settings</string>
+    <string name="hw_decoder">HW</string>
+    <string name="hw_plus_decoder">HW+</string>
+    <string name="sw_decoder">SW</string>
+    <string name="noise_reduction">AI Noise Reduction</string>
+    <string name="loudness_preamp">Preamp Gain (VLC 200%)</string>
+    <string name="accessibility_play_pause">Play or Pause</string>
+    <string name="accessibility_rewind">Rewind 10 seconds</string>
+    <string name="accessibility_forward">Forward 10 seconds</string>
+    <string name="accessibility_aspect_ratio">Change Aspect Ratio</string>
+    <string name="accessibility_audio_tracks">Audio Tracks</string>
+    <string name="accessibility_subtitles">Subtitles</string>
+</resources>
