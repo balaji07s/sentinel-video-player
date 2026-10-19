@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "MX Player Ultra"
+rootProject.name = "Sentinel Video Player"
 
 include(":app")

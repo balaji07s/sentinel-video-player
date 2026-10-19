@@ -2,26 +2,51 @@ package com.example.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Brand accents
-val MxCyan = Color(0xFF00D2FF)
-val MxNeonBlue = Color(0xFF007AFE)
-val MxAccentOrange = Color(0xFFFF9500)
-val MxAccentGreen = Color(0xFF34C759)
-val MxPreampRed = Color(0xFFFF3B30)
+// Cyber Neon & Violet Brand Accents
+val CyberPrimary = Color(0xFF00E5FF) // Electric Cyan
+val CyberSecondary = Color(0xFF7C4DFF) // Neon Violet
+val CyberAccentGreen = Color(0xFF00E676)
+val CyberAccentOrange = Color(0xFFFFAB00)
+val CyberPreampRed = Color(0xFFFF1744)
 
-// Midnight Blue scheme
-val MidnightBackground = Color(0xFF0A0F1D)
-val MidnightSurface = Color(0xFF141A2E)
-val MidnightSurfaceVariant = Color(0xFF1E263E)
-val MidnightTextPrimary = Color(0xFFF0F4FC)
-val MidnightTextSecondary = Color(0xFF8F9BB3)
+// Compatibility aliases for Sentinel Video Player
+val MxCyan = Color(0xFF00E5FF)
+val MxNeonBlue = Color(0xFF7C4DFF)
+val MxAccentOrange = Color(0xFFFFAB00)
+val MxAccentGreen = Color(0xFF00E676)
+val MxPreampRed = Color(0xFFFF1744)
 
-// OLED Pure Black scheme
-val OledBackground = Color(0xFF000000)
-val OledSurface = Color(0xFF0D0D0D)
-val OledSurfaceVariant = Color(0xFF1A1A1A)
-val OledTextPrimary = Color(0xFFFFFFFF)
-val OledTextSecondary = Color(0xFFAAAAAA)
+// Cyber Dark Mode Palette
+val CyberDarkBackground = Color(0xFF0B0A10)
+val CyberDarkSurface = Color(0xFF141322)
+val CyberDarkSurfaceVariant = Color(0xFF1E1C33)
+val CyberDarkTextPrimary = Color(0xFFF3F2F8)
+val CyberDarkTextSecondary = Color(0xFF9E9BAC)
+
+// Electric Light Mode Palette
+val CyberLightBackground = Color(0xFFF4F3F8)
+val CyberLightSurface = Color(0xFFFFFFFF)
+val CyberLightSurfaceVariant = Color(0xFFE2DFEC)
+val CyberLightTextPrimary = Color(0xFF141322)
+val CyberLightTextSecondary = Color(0xFF5C5975)
+
+// Emerald Green Palette
+val EmeraldBackground = Color(0xFF07140B)
+val EmeraldSurface = Color(0xFF0F2416)
+val EmeraldPrimary = Color(0xFF00E676)
+val EmeraldSecondary = Color(0xFF4CD964)
+
+// Sunset Orange Palette
+val SunsetBackground = Color(0xFF140A07)
+val SunsetSurface = Color(0xFF24140F)
+val SunsetPrimary = Color(0xFFFF9800)
+val SunsetSecondary = Color(0xFFFF5722)
+
+// Royal Indigo Palette
+val IndigoBackground = Color(0xFF0A0D1A)
+val IndigoSurface = Color(0xFF141A30)
+val IndigoPrimary = Color(0xFF536DFE)
+val IndigoSecondary = Color(0xFFFFD700)
 
 // High Contrast Accessibility scheme
 val HighContrastBackground = Color(0xFF000000)

@@ -8,7 +8,7 @@ import com.example.data.model.ThemeContrastMode
 
 class MediaPreferences(context: Context) {
     private val prefs: SharedPreferences =
-        context.getSharedPreferences("mx_player_ultra_prefs", Context.MODE_PRIVATE)
+        context.getSharedPreferences("sentinel_player_prefs", Context.MODE_PRIVATE)
 
     fun getResumePosition(uriString: String): Long {
         return prefs.getLong("pos_$uriString", 0L)
@@ -32,12 +32,12 @@ class MediaPreferences(context: Context) {
     }
 
     fun getThemeContrastMode(): ThemeContrastMode {
-        val name = prefs.getString("theme_mode", ThemeContrastMode.MIDNIGHT_BLUE.name)
-            ?: ThemeContrastMode.MIDNIGHT_BLUE.name
+        val name = prefs.getString("theme_mode", ThemeContrastMode.CYBER_VIOLET.name)
+            ?: ThemeContrastMode.CYBER_VIOLET.name
         return try {
             ThemeContrastMode.valueOf(name)
         } catch (e: Exception) {
-            ThemeContrastMode.MIDNIGHT_BLUE
+            ThemeContrastMode.CYBER_VIOLET
         }
     }
 

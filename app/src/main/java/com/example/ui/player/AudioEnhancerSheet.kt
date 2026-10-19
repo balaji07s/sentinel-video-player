@@ -190,7 +190,9 @@ fun AudioEnhancerSheet(
             Card(
                 colors = CardDefaults.cardColors(containerColor = Color(0xFF172033)),
                 shape = RoundedCornerShape(16.dp),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onSettingsChanged(settings.copy(noiseReductionEnabled = !settings.noiseReductionEnabled)) }
             ) {
                 Row(
                     modifier = Modifier

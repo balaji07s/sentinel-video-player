@@ -1,6 +1,6 @@
 {
-  "name": "MX Player Ultra",
-  "description": "High-performance privacy-first media player for mobile and TV with HW acceleration, custom subtitles, audio enhancer, and gesture controls.",
+  "name": "Sentinel Video Player",
+  "description": "High-performance privacy-first media player for mobile and TV with HW acceleration, light green theme, custom subtitles, audio enhancer, and gesture controls.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

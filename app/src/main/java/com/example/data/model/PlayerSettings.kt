@@ -3,20 +3,24 @@ package com.example.data.model
 enum class DecoderType(val label: String, val description: String) {
     HW("HW", "Hardware Decoder (Fastest, Battery-friendly)"),
     HW_PLUS("HW+", "Hardware+ Surface Decoder (Advanced HW acceleration)"),
-    SW("SW", "Software Decoder (CPU fallback for corrupted/rare codecs)")
+    SW("SW", "Software Decoder (Full FFmpeg codec fallback for all formats)")
 }
 
 enum class AspectRatioMode(val label: String) {
     FIT("Fit to Screen"),
-    ZOOM_CROP("Crop / Zoom"),
-    STRETCH("Stretch to Fill"),
-    RATIO_16_9("16:9 Wide"),
-    RATIO_4_3("4:3 Standard")
+    ZOOM_CROP("Crop & Fill"),
+    STRETCH("Stretch to Screen"),
+    RATIO_16_9("16:9 Widescreen"),
+    RATIO_4_3("4:3 Standard"),
+    CUSTOM_ZOOM("Custom Zoom & Crop")
 }
 
 enum class ThemeContrastMode(val label: String, val subtitle: String) {
-    MIDNIGHT_BLUE("MX Midnight Blue", "Signature MX Player dark theme"),
-    OLED_DARK("OLED Pure Black", "True black for AMOLED battery efficiency"),
+    CYBER_VIOLET("Cyber Neon Dark", "Deep obsidian with electric cyan & violet"),
+    ELECTRIC_LIGHT("Electric Light", "Clean bright mode with violet accents"),
+    EMERALD_GREEN("Emerald Green", "Fresh vibrant green and dark green background"),
+    SUNSET_ORANGE("Sunset Orange", "Warm amber and rich dark red-orange tones"),
+    ROYAL_INDIGO("Royal Indigo", "Deep royal blue and vibrant gold accents"),
     HIGH_CONTRAST_ACCESSIBILITY("High Contrast", "High-visibility yellow & cyan for accessibility"),
     SEPIA_NIGHT("Night Sepia", "Warm tones for low-light viewing")
 }

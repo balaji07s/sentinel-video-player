@@ -1,5 +1,7 @@
 package com.example.ui.library
 
+import com.example.R
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -114,16 +116,15 @@ fun LibraryScreen(
                     modifier = Modifier
                         .size(38.dp)
                         .clip(RoundedCornerShape(10.dp))
-                        .background(
-                            Brush.linearGradient(listOf(MxCyan, Color(0xFF0051FF)))
-                        ),
+                        .background(Color(0xFF0F2416)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.PlayArrow,
-                        contentDescription = "MX Player Logo",
-                        tint = Color.White,
-                        modifier = Modifier.size(24.dp)
+                    androidx.compose.foundation.Image(
+                        painter = coil.compose.rememberAsyncImagePainter(R.drawable.sentinel_video_player_logo_1792390668021),
+                        contentDescription = "Sentinel Logo",
+                        modifier = Modifier
+                            .size(34.dp)
+                            .clip(RoundedCornerShape(8.dp))
                     )
                 }
 
@@ -131,7 +132,7 @@ fun LibraryScreen(
 
                 Column {
                     Text(
-                        text = "MX Player Ultra",
+                        text = "Sentinel Video Player",
                         fontSize = 19.sp,
                         fontWeight = FontWeight.Black,
                         color = Color.White

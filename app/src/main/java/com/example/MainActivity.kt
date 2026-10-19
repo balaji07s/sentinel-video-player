@@ -52,8 +52,9 @@ class MainActivity : ComponentActivity() {
 
     private var currentScreen by mutableStateOf<Screen>(Screen.Library)
     private var videoList by mutableStateOf<List<MediaItemData>>(emptyList())
-    private var themeMode by mutableStateOf(ThemeContrastMode.MIDNIGHT_BLUE)
+    private var themeMode by mutableStateOf(ThemeContrastMode.CYBER_VIOLET)
     private var isTvMode by mutableStateOf(false)
+    private var isNoiseReductionEnabled by mutableStateOf(false)
 
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -72,6 +73,7 @@ class MainActivity : ComponentActivity() {
         mediaScanner = LocalMediaScanner(this, preferences)
         themeMode = preferences.getThemeContrastMode()
         isTvMode = preferences.isTvMode()
+        isNoiseReductionEnabled = preferences.isNoiseReductionEnabled()
 
         checkPermissionsAndLoadVideos()
         handleIncomingIntent(intent)
@@ -152,7 +154,7 @@ class MainActivity : ComponentActivity() {
                                     currentThemeMode = themeMode,
                                     currentDecoder = preferences.getDecoderType(),
                                     isTvMode = isTvMode,
-                                    isNoiseReductionEnabled = preferences.isNoiseReductionEnabled(),
+                                    isNoiseReductionEnabled = isNoiseReductionEnabled,
                                     onThemeModeChanged = { mode ->
                                         themeMode = mode
                                         preferences.setThemeContrastMode(mode)
@@ -165,6 +167,7 @@ class MainActivity : ComponentActivity() {
                                         preferences.setTvMode(enabled)
                                     },
                                     onNoiseReductionToggled = { enabled ->
+                                        isNoiseReductionEnabled = enabled
                                         preferences.setNoiseReductionEnabled(enabled)
                                     },
                                     onClearHistory = {

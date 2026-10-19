@@ -146,6 +146,7 @@ fun MXVideoPlayer(
     var isScreenLocked by remember { mutableStateOf(false) }
     var isAudioSheetOpen by remember { mutableStateOf(false) }
     var isSubtitleSheetOpen by remember { mutableStateOf(false) }
+    var isAspectCropSheetOpen by remember { mutableStateOf(false) }
 
     // Gestures State & HUDs
     var isVolumeHudVisible by remember { mutableStateOf(false) }
@@ -315,6 +316,7 @@ fun MXVideoPlayer(
                             AspectRatioMode.STRETCH -> AspectRatioFrameLayout.RESIZE_MODE_FILL
                             AspectRatioMode.RATIO_16_9 -> AspectRatioFrameLayout.RESIZE_MODE_FIXED_WIDTH
                             AspectRatioMode.RATIO_4_3 -> AspectRatioFrameLayout.RESIZE_MODE_FIXED_HEIGHT
+                            AspectRatioMode.CUSTOM_ZOOM -> AspectRatioFrameLayout.RESIZE_MODE_ZOOM
                         }
                         layoutParams = FrameLayout.LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -329,6 +331,7 @@ fun MXVideoPlayer(
                         AspectRatioMode.STRETCH -> AspectRatioFrameLayout.RESIZE_MODE_FILL
                         AspectRatioMode.RATIO_16_9 -> AspectRatioFrameLayout.RESIZE_MODE_FIXED_WIDTH
                         AspectRatioMode.RATIO_4_3 -> AspectRatioFrameLayout.RESIZE_MODE_FIXED_HEIGHT
+                        AspectRatioMode.CUSTOM_ZOOM -> AspectRatioFrameLayout.RESIZE_MODE_ZOOM
                     }
                 },
                 modifier = Modifier.fillMaxSize()
@@ -652,11 +655,7 @@ fun MXVideoPlayer(
 
                             // Aspect Ratio Cycle button
                             IconButton(
-                                onClick = {
-                                    val modes = AspectRatioMode.values()
-                                    val nextIndex = (aspectRatioMode.ordinal + 1) % modes.size
-                                    aspectRatioMode = modes[nextIndex]
-                                },
+                                onClick = { isAspectCropSheetOpen = true },
                                 modifier = Modifier.testTag("aspect_ratio_button")
                             ) {
                                 Icon(
@@ -875,6 +874,20 @@ fun MXVideoPlayer(
                     preferences.saveSubtitleAppearance(updated)
                 },
                 onDismiss = { isSubtitleSheetOpen = false }
+            )
+        }
+
+        if (isAspectCropSheetOpen) {
+            AspectCropSheet(
+                currentMode = aspectRatioMode,
+                zoomScale = zoomScale,
+                onModeSelected = { mode ->
+                    aspectRatioMode = mode
+                },
+                onZoomChanged = { scale ->
+                    zoomScale = scale
+                },
+                onDismiss = { isAspectCropSheetOpen = false }
             )
         }
     }

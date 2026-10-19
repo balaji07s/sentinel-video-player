@@ -24,7 +24,7 @@ class ExampleRobolectricTest {
     fun testAppName() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val appName = context.getString(R.string.app_name)
-        assertEquals("MX Player Ultra", appName)
+        assertEquals("Sentinel Video Player", appName)
     }
 
     @Test
@@ -47,7 +47,7 @@ class ExampleRobolectricTest {
 
             2
             00:01:24,000 --> 00:01:28,000
-            This is MX Player Ultra!
+            This is Sentinel Video Player!
         """.trimIndent()
 
         val cues = SubtitleParser.parseSrtOrVtt(srtText)
@@ -55,7 +55,7 @@ class ExampleRobolectricTest {
         assertEquals(80_000L, cues[0].startTimeMs)
         assertEquals(83_500L, cues[0].endTimeMs)
         assertEquals("Hello World", cues[0].text)
-        assertEquals("This is MX Player Ultra!", cues[1].text)
+        assertEquals("This is Sentinel Video Player!", cues[1].text)
     }
 
     @Test
@@ -69,8 +69,8 @@ class ExampleRobolectricTest {
         prefs.setDecoderType(DecoderType.HW_PLUS)
         assertEquals(DecoderType.HW_PLUS, prefs.getDecoderType())
 
-        prefs.setThemeContrastMode(ThemeContrastMode.HIGH_CONTRAST_ACCESSIBILITY)
-        assertEquals(ThemeContrastMode.HIGH_CONTRAST_ACCESSIBILITY, prefs.getThemeContrastMode())
+        prefs.setThemeContrastMode(ThemeContrastMode.CYBER_VIOLET)
+        assertEquals(ThemeContrastMode.CYBER_VIOLET, prefs.getThemeContrastMode())
 
         prefs.setPreampGain(175)
         assertEquals(175, prefs.getPreampGain())

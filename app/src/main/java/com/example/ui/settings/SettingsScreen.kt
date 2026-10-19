@@ -132,8 +132,11 @@ fun SettingsScreen(
                                     .clip(CircleShape)
                                     .background(
                                         when (mode) {
-                                            ThemeContrastMode.MIDNIGHT_BLUE -> MxCyan
-                                            ThemeContrastMode.OLED_DARK -> Color.Black
+                                            ThemeContrastMode.CYBER_VIOLET -> MxCyan
+                                            ThemeContrastMode.ELECTRIC_LIGHT -> Color.White
+                                            ThemeContrastMode.EMERALD_GREEN -> Color(0xFF00E676)
+                                            ThemeContrastMode.SUNSET_ORANGE -> Color(0xFFFF9800)
+                                            ThemeContrastMode.ROYAL_INDIGO -> Color(0xFF536DFE)
                                             ThemeContrastMode.HIGH_CONTRAST_ACCESSIBILITY -> HighContrastYellow
                                             ThemeContrastMode.SEPIA_NIGHT -> Color(0xFFFFB300)
                                         }

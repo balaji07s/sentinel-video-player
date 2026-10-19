@@ -541,7 +541,10 @@ fun SubtitleSettingsSheet(
 
                     // Toggles
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onAppearanceChanged(appearance.copy(outlineEnabled = !appearance.outlineEnabled)) }
+                            .padding(vertical = 4.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -554,7 +557,10 @@ fun SubtitleSettingsSheet(
                     }
 
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onAppearanceChanged(appearance.copy(isBold = !appearance.isBold)) }
+                            .padding(vertical = 4.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
